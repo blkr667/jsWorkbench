@@ -1,0 +1,19 @@
+<h1>Users List</h1>
+
+<% users.forEach(function(user){ %>
+	<div>
+		<span> <%= user.name %> </span>
+		<span> | </span>
+		<span> <%= user.userName %> </span>
+	</div>
+
+<% }); %>
+
+<h3>Add new user:</h3>
+
+<form action="/adduser" method="POST">    
+    <input type="text" id="fname" placeholder="name" name="name">
+    <input type="text" id="flogin" placeholder="userName" name="userName">
+
+    <button>Add</button>
+</form>
