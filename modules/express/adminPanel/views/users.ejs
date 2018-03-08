@@ -1,19 +1,13 @@
-<h1>Users List</h1>
+<% include sections/header %>
 
-<% users.forEach(function(user){ %>
-	<div>
-		<span> <%= user.name %> </span>
-		<span> | </span>
-		<span> <%= user.userName %> </span>
-	</div>
+<% include users-list %>
 
-<% }); %>
+<div class="container">
+    <div class="row">
+     	<div style="width: 60%; margin: 25px auto;">
+			<a class="btn btn-primary btn-large" href="/users/new">Add New User</a>
+        </div>
+    </div>
+</div>
 
-<h3>Add new user:</h3>
-
-<form action="/adduser" method="POST">    
-    <input type="text" id="fname" placeholder="name" name="name">
-    <input type="text" id="flogin" placeholder="userName" name="userName">
-
-    <button>Add</button>
-</form>
+<% include sections/footer %>
