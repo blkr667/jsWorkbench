@@ -1,0 +1,24 @@
+<% include ../sections/header %>
+
+
+<header class="jumbotron">
+    <div class="container">
+
+        <h2 style="text-align: center">
+            Admin Panel
+        </h2>
+        <div style="width: 50%; margin: 25px auto;">
+
+            logged user:  <%= loggedUsername %>
+
+            <% include users-list %>
+
+
+            <a href="/">Go Back</a>
+        </div>
+
+     </div>
+</header>
+
+
+<% include ../sections/footer %>

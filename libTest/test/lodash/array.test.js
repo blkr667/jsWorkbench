@@ -44,4 +44,32 @@ describe("ARRAY", () => {
     });
   });
 
+  describe("ZIP (Merge arrays by index)", () => {
+    it("zip arrays with same length", () => {
+      const result = _.zip([1, 2], ["a", "b"]);
+
+      expect(result).to.deep.equal([[1, "a"], [2, "b"]]);
+    });
+
+    it("zip arrays with differend length", () => {
+      const result = _.zip([1, 2], ["a"]);
+
+      expect(result).to.deep.equal([[1, "a"], [2, undefined]]);
+    });
+  });
+
+    describe("TAKE (Get elements from beginning)", () => {
+    it("take with 1 arg (take first element)", () => {
+      const result = _.take([1, 2, 3, 4]);
+
+      expect(result).to.deep.equal([1]);
+    });
+
+    it("take with 2 args (take first n elements)", () => {
+      const result = _.take([1, 2, 3, 4], 2);
+
+      expect(result).to.deep.equal([1, 2]);
+    });
+  });
+
 });

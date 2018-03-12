@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+     	<h3 style="text-align: center">
+     		Users List
+     	</h3>
+     	<div style="width: 60%; margin: 25px auto;">
+		<ul class="list-group">
+			<% users.forEach(function(user){ %>
+				 <li class="list-group-item">
+						<div> 
+							<strong>Username:</strong> <%= user.username %> 
+						</div>
+				 </li>
+			<% }); %>
+		</ul>
+        </div>
+    </div>
+</div>
