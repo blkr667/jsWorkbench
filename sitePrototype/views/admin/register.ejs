@@ -1,0 +1,36 @@
+<% include ../sections/header %>
+
+<div class="container">
+    <div class="row">
+     	<h1 style="text-align: center">
+     		Register new user
+     	</h1>
+     	<div style="width: 30%; margin: 25px auto;">
+     		<form action="/register" method="POST">
+	     		<div class="form-group">
+
+				    <label for="usernameInput">Username</label>
+				    <input type="text" class="form-control" id="usernameInput" name="username" placeholder="Enter username">
+				</div>
+                <div class="form-group">
+                	<label for="usernameInput">Password</label>
+				    <input type="password" class="form-control" id="usernameInput" name="password" placeholder="Enter password">
+				</div>
+                <div class="form-group">
+					<button class="btn btn-primary btn-lg">Register here</button>
+				</div>
+			</form>
+
+            <br>
+
+            Already have a account?  <a class="btn btn-default btn-sm " href="/login">Login</a>
+
+            <br>
+
+			<a href="/">Go Back</a>
+
+        </div>
+    </div>
+</div>
+
+<% include ../sections/footer %>

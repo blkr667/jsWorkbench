@@ -1,0 +1,26 @@
+{
+  "name": "site-prototype",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "chai": "^4.1.2",
+    "express": "^4.16.2",
+    "express-session": "^1.13.0",
+    "lodash": "^3.10.0",
+    "mocha": "^5.0.1",
+    "request": "^2.83.0",
+    "mongoose": "^4.4.6",
+    "method-override": "^2.3.5",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0"
+  }
+}
