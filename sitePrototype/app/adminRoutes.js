@@ -35,6 +35,8 @@ function addAdminRoutes(app) {
 	    res.render(REGISTER_VIEW);
 	});
 
+
+
 	app.post(REGISTER_ROUTE, function(req, res){
 	    User.register(new User({username: req.body.username}), req.body.password, function(err, user){
 	        if(err){
@@ -47,6 +49,11 @@ function addAdminRoutes(app) {
 	        }
 	    })
 	});
+
+
+
+
+	
 
 	app.get(LOGIN_ROUTE, function(req, res){
 	    res.render(LOGIN_VIEW);

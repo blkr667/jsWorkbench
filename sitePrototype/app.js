@@ -3,9 +3,10 @@ var express = require('express'),
     mongoose = require('mongoose'),
     methodOverride = require('method-override');
 var app = express(),
+    IndexContent = require('./models/indexContent');
     addAdminRoutes = require('./app/adminRoutes');
 
-mongoose.connect("mongodb://localhost/sss", {useMongoClient: true});
+mongoose.connect("mongodb://localhost/sdb", {useMongoClient: true});
 
 app.use(require('express-session')({
     secret: "Crystal is something",
@@ -28,8 +29,40 @@ addAdminRoutes(app);
 // =========
 
 app.get('/', function(req, res){
-    res.render('index');
+    IndexContent.find({}, function(err, indexContentList){
+        if(err){
+            console.log("error");
+        }else{
+            console.log(indexContentList);
+            //res.render('index');
+            res.render('index', {title:indexContentList[0].title });
+        }
+    });
+
+    
+    
+    
+
+/*
+    IndexContent.create(new IndexContent({
+        title: "title",
+        heading: "heading",
+        message: "msg"
+    }), function(err, response){
+        if(err){
+            console.log(err);
+        }else{
+            console.log(response);
+        }
+    })
+*/
 });
+
+
+
+
+
+ 
 
 
 
