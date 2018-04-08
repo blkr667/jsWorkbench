@@ -6,6 +6,7 @@ var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var mocha = require('gulp-mocha');
+var Server = require('karma').Server;
 
 
 gulp.task('lint', function() {
@@ -24,6 +25,14 @@ gulp.task('test', function() {
     }));
 });
 
+gulp.task('karma', function (done) {
+    new Server({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, function () {
+        done();
+    }).start();
+});
 
 
 gulp.task('default', [ 'lint', 'test']);
