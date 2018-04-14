@@ -1,6 +1,8 @@
 var passport = require('passport'),
 	LocalStrategy = require('passport-local'),
-	User = require('../models/user');
+	User = require('../models/user'),
+	IndexContent = require('../models/indexContent'),
+	ObjectID = require('mongodb').ObjectID;
 
 const NO_ADMIN_ACCESS_VIEW = "admin/noAdminAccess";
 const ADMIN_PANEL_VIEW = "admin/panel";
@@ -20,13 +22,25 @@ function addAdminRoutes(app) {
 	passport.serializeUser(User.serializeUser());
 	passport.deserializeUser(User.deserializeUser());
 
+
+	// ADMIN PANEL
 	app.get(ADMIN_ROUTE, isLoggedIn, function(req, res){
     	User.find({}, function(err, userList){
 	        if(err){
 	            console.log("error");
 	        }else{
-
-	            res.render(ADMIN_PANEL_VIEW, {users:userList, loggedUsername: req.user.username });
+				IndexContent.find({}, function(err, indexContentList){
+					if(err){
+						console.log("error");
+					}else{
+						let model = {
+							users: userList, 
+							loggedUsername: req.user.username, 
+							indexContent: indexContentList[0]
+						}
+						res.render(ADMIN_PANEL_VIEW, model);
+					}
+				});
 	        }
 	    });
 	});
@@ -50,7 +64,15 @@ function addAdminRoutes(app) {
 	    })
 	});
 
-
+	app.post("/indexcontent", function(req, res){
+		IndexContent.findOne( {}, function (err, content){
+			content.title =  req.body.title;
+			content.heading =  req.body.heading;
+			content.message =  req.body.message;
+			content.save();
+		  });
+		res.redirect('/');
+	});
 
 
 	

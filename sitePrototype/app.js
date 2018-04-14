@@ -35,7 +35,7 @@ app.get('/', function(req, res){
         }else{
             console.log(indexContentList);
             //res.render('index');
-            res.render('index', {title:indexContentList[0].title });
+            res.render('index', {indexContent:indexContentList[0] });
         }
     });
 
