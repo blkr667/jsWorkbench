@@ -1,0 +1,32 @@
+<% include sections/header %>
+
+
+<header class="jumbotron">
+    <div class="container">
+
+        <h2 style="text-align: center">
+           	News:
+        </h2>
+        <div style="width: 50%; margin: 25px auto;">
+
+            <% blogPosts.forEach(function(post){ %>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"> <%= post.title %></div>
+                    <div class="panel-body">
+                        <%= post.content %><br>
+                        <i><%= post.author %> | <%= post.date %></i>
+                    </div>
+                </div>
+           <% }); %>
+            
+
+
+        </div>
+        <br>
+
+     </div>
+</header>
+
+
+<% include sections/footer %>

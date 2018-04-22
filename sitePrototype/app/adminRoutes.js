@@ -15,13 +15,15 @@ const REGISTER_ROUTE = "/register";
 const LOGOUT_ROUTE = "/logout";
 const ADMIN_ROUTE = "/admin";
 
+var addAdminBlogRoutes = require('./adminBlogRoutes');
+
 function addAdminRoutes(app) {
 	app.use(passport.initialize());
 	app.use(passport.session());
 	passport.use(new LocalStrategy(User.authenticate()));
 	passport.serializeUser(User.serializeUser());
 	passport.deserializeUser(User.deserializeUser());
-
+	addAdminBlogRoutes(app);
 
 	// ADMIN PANEL
 	app.get(ADMIN_ROUTE, isLoggedIn, function(req, res){

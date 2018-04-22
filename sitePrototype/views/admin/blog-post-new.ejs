@@ -1,0 +1,33 @@
+<% include ../sections/header %>
+
+<header class="jumbotron">
+    <div class="container">
+
+        <h2 style="text-align: center">
+            Blog post
+        </h2>
+        <div style="width: 50%; margin: 25px auto; background-color: LightSteelBlue ;">
+            <form action="/admin/blog/new" method="POST">
+                <div class="form-group">
+                   <label for="title">Title</label>
+                   <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+               </div>
+               <div class="form-group">
+                   <label for="content">Content</label>
+                   <input type="text" class="form-control" id="content" name="content" placeholder="Enter content">
+               </div>
+               <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="author" name="author" placeholder="Enter author">
+                </div>
+               <div class="form-group">
+                   <button class="btn btn-primary btn-sm">Add new blog post</button>
+               </div>
+           </form>
+        </div>
+
+     </div>
+</header>
+
+
+<% include ../sections/footer %>

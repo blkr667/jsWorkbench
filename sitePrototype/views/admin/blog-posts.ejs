@@ -1,0 +1,36 @@
+<% include ../sections/header %>
+
+
+<header class="jumbotron">
+    <div class="container">
+
+        <h2 style="text-align: center">
+            Blog posts: <a href="/admin/blog/new">Add new post</a>
+        </h2>
+        <div style="width: 50%; margin: 25px auto;">
+
+            <% blogPosts.forEach(function(post){ %>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"> <%= post.title %></div>
+                    <div class="panel-body">
+                        <%= post.content %><br>
+                        <i><%= post.author %> | <%= post.date %></i>
+                    </div>
+                    <div class="panel-footer">
+                            <a href="/admin/blog/edit/<%= post._id %>"><button class="btn btn-primary btn-sm">Edit</button></a>
+                            <a href="/admin/blog/delete/<%= post._id %>"><button class="btn btn-primary btn-sm">Delete</button></a>
+                    </div>
+                </div>
+           <% }); %>
+            
+
+
+        </div>
+        <br>
+
+     </div>
+</header>
+
+
+<% include ../sections/footer %>
