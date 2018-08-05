@@ -6,6 +6,9 @@ var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
 var mocha = require('gulp-mocha');
+var babel = require('gulp-babel');
+var babelregister = require('babel-core/register');
+var babelregister2 = require('babel-register');
 var Server = require('karma').Server;
 
 
@@ -24,6 +27,19 @@ gulp.task('test', function() {
       }
     }));
 });
+
+gulp.task('test-design-patterns', function() {
+    return gulp.src(['design-patterns/**/*.spec.js'])
+   // .pipe(babel())
+      .pipe(mocha({
+        compilers: 'js:babel-core/register',
+        //compilers: babelregister2,
+        reporter: 'spec',
+        globals: {
+          should: require('should')
+        }
+      }));
+  });
 
 gulp.task('karma', function (done) {
     new Server({

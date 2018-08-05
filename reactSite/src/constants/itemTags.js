@@ -1,0 +1,13 @@
+const itemTags = Object.freeze({
+    PIES: "PIES",
+    KOT: "KOT",
+    SZCZEPIENIE: "SZCZEPIENIE",
+    WSCIEKLIZNA: "WSCIEKLIZNA",
+    GRUCZOL: "GRUCZOL",
+    KASTRACJA: "KASTRACJA",
+    STERYLIZACJA: "STERYLIZACJA",
+    DERMATOLOGIA: "DERMATOLOGIA",
+    WYSYPKA: "WYSYPKA"
+});
+
+export default itemTags

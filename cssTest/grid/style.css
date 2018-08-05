@@ -1,0 +1,100 @@
+body {
+  margin: 40px;
+}
+
+    .wrapper {
+        display: grid;
+        grid-gap: 10px;
+        
+        grid-auto-columns: min-content min-content;
+        grid-auto-rows: min-content max-content;
+        background-color: #fff;
+        color: #444; 
+    }
+
+    .box {
+        background-color: #444;
+        color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 150%;
+
+    }
+
+    .box .box {
+        background-color: #ccc;
+        color: #444;
+    }
+
+    .header1 {
+        grid-column: col / span 1;
+        grid-row: row / span 1;
+    }
+
+    .cabinetColumn {
+        grid-column: col / span 1;
+        grid-row: row 2;
+    }
+
+    .innerWrapper{
+        grid-column: col 2 / span 5;
+        grid-row: row / span 2;
+
+        display: grid;
+
+         grid-template-columns: repeat(5, [col] auto ) ;
+         grid-auto-flow: column;
+    }
+
+
+
+
+    .header2 {
+        grid-column: col / span 2;
+        grid-row: row 0;
+    }
+
+    .header3 {
+        grid-column: col 3 / span 1;
+        grid-row: row 0;
+    }
+
+    .header4 {
+        grid-column: col 4 / span 1;
+        grid-row: row 0;
+    }
+
+    .header5 {
+        grid-column: col 5 / span 1;
+        grid-row: row 0;
+    }
+
+
+    .rmod2 {
+        grid-column: col / span 1;
+        grid-row: span 2;
+
+    }
+
+    .rmod3 {
+        grid-column: col / span 1;
+        grid-row: span 3;
+
+    }
+
+    .port {
+        grid-column: col 2 / span 1;
+    }
+
+    .value2 {
+        grid-column: col 3 / span 1;
+    }
+
+    .value3 {
+        grid-column: col 4 / span 1;
+    }
+
+    .value4 {
+        grid-column: col 5 / span 1;
+    }
+

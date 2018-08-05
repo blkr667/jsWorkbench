@@ -1,0 +1,19 @@
+{
+  "name": "reactsite",
+  "version": "1.0.0",
+  "description": "react site prototype",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "react-redux": "^5.0.7",
+    "react-scripts": "^1.1.4",
+    "redux": "^4.0.0"
+  }
+}
